@@ -9,8 +9,8 @@
 
 int main(void)
 {
-srand(time(0)); Seed the random number generator with the current time
-int n = rand() % 201 - 100; Generate a random number between - 100 and 100
+srand(time(0);
+int n = rand() % 201 - 100;
 printf("%d\n", n);
 if (n > 0)
 printf("is positive\n");
