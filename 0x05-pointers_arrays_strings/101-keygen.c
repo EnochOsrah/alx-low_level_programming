@@ -4,11 +4,11 @@
 
 /**
  * main - generates random passwords for 101-crackme
- * Return: zero
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-int sum = 0;
+int sum;
 char c;
 
 srand(time(NULL));
