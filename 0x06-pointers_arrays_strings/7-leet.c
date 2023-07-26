@@ -1,37 +1,24 @@
 #include "main.h"
 /**
- * cap_string - prints
- * @c: The character to print
- * Return: On success 1.
- * On error, -1 is returned, and errno is set.
+ * leet - Encodes a string to 1337
+ * @str:: The string to be encoded
+ *
+ * Return: A pointer to the encoded string.
  **/
-char *cap_string(char *c)
+char *leet(char *str)
 {
-	int i = 0, d = 0, len = 0;
-	char list[] = { ' ', '\n', '\t', ',', ';', '.', '!',
-		'?', '"', '(', ')', '{', '}' };
+int alpha1 = 0, alpha2;
+char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
 
-	while (list[len] != '\0')
-		len++;
-
-	while (*(c + i) != '\0')
-	{
-		if (*(c + 0) >= 97 && *(c + 0) <= 122)
-			*(c + 0) -= 32;
-		for (d = 0; d < len; d++)
-		{
-			if (*(c + i) == list[d])
-			{
-				if (*(c + i + 1) != list[d])
-				{
-					if (*(c + i + 1) >= 97 && *(c + i + 1) <= 122)
-					{
-						*(c + i + 1) += -32;
-					}
-				}
-			}
-		}
-		i++;
-	}
-	return (c);
+while (str[alpha1])
+{
+for (alpha2 = 0; alpha2 <= 7; alpha2++)
+{
+if (str[alpha1] == leet[alpha2] ||
+str[alpha1] - 32 == leet[alpha2])
+str[alpha1] = alpha2 + '0';
+}
+alpha1++;
+}
+return (str);
 }
